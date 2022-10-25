@@ -3,8 +3,12 @@ import { Outlet } from "react-router-dom";
 export default function Main() {
   return (
     <div>
-      <Header />
-      <Outlet />
+      <div className="w-[80%] 2xl:max-w-screen-2xl mx-auto">
+        <Header />
+        <div className="my-16">
+          <Outlet />
+        </div>
+      </div>
     </div>
   );
 }
