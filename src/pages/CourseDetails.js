@@ -1,5 +1,5 @@
 import { FaPrint } from "react-icons/fa";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 export default function CourseDetails() {
   const course = useLoaderData();
@@ -19,9 +19,12 @@ export default function CourseDetails() {
         alt={name}
       />
       <p className="text-base font-medium text-gray-600 sm:text-lg">{text}</p>
-      <button className="block p-2 mt-3 font-semibold text-white transition duration-300 bg-blue-500 rounded hover:bg-blue-600 print:hidden">
+      <Link
+        to={`/courses/checkout/${id}`}
+        className="inline-block p-2 mt-3 font-semibold text-white transition duration-300 bg-blue-500 rounded hover:bg-blue-600 print:hidden"
+      >
         Checkout
-      </button>
+      </Link>
     </div>
   );
 }

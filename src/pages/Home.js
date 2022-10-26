@@ -5,7 +5,7 @@ export default function Home() {
     <div className="justify-between gap-10 p-5 space-y-10 bg-white rounded-md lg:flex lg:space-y-0">
       <div className="flex-1">
         <h1 className="text-2xl font-semibold text-black sm:text-3xl md:text-4xl">
-          Learn anywhere. From any distance
+          Learn anywhere, anytime. From any distance
           <span className="font-bold text-blue-500">...</span>
         </h1>
         <p className="mt-6 text-base font-semibold text-gray-700 sm:text-lg sm:mt-9 lg:mt-12 ">
