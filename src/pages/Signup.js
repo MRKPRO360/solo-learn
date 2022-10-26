@@ -9,11 +9,29 @@ export default function Signup() {
 
   const navigate = useNavigate();
 
-  const { signup } = useAuth();
+  const { signup, googleLogin, githubLogin } = useAuth();
 
-  const handleGoogleLogin = async function () {};
+  const handleGoogleLogin = async function () {
+    try {
+      setError("");
+      await googleLogin();
+      navigate("/");
+    } catch (err) {
+      setError(err.message);
+      console.log(err);
+    }
+  };
 
-  const handleGithubLogin = async function () {};
+  const handleGithubLogin = async function () {
+    try {
+      setError("");
+      await githubLogin();
+      navigate("/");
+    } catch (err) {
+      setError(err.message);
+      console.log(err);
+    }
+  };
 
   const handleSignup = async function (e) {
     e.preventDefault();
