@@ -1,5 +1,8 @@
-import { Link, NavLink } from "react-router-dom";
+import { useState } from "react";
 import { useAuth } from "../../context/AuthContext";
+import { Link, NavLink } from "react-router-dom";
+import Switch from "react-switch";
+import { HiOutlineMoon, HiOutlineSun } from "react-icons/hi";
 const navItems = [
   {
     path: "/courses",
@@ -16,6 +19,12 @@ const navItems = [
 ];
 
 export default function Header() {
+  const [toggle, setToggle] = useState(false);
+
+  const handleSwitch = function () {
+    setToggle(!toggle);
+  };
+
   const { currentUser } = useAuth();
   return (
     <div className="items-center justify-between px-3 py-3 mt-5 space-y-6 bg-blue-500 rounded shadow md:px-4 md:space-y-0 md:flex shadow-blue-400">
@@ -54,7 +63,7 @@ export default function Header() {
           </div>
         </Link>
       ) : (
-        <div className=" ">
+        <div className="flex items-center gap-3">
           <NavLink
             className={({ isActive }) =>
               isActive
@@ -65,6 +74,18 @@ export default function Header() {
           >
             Login
           </NavLink>
+          <Switch
+            onChange={handleSwitch}
+            onHandleColor="#fff"
+            offHandleColor="#3b82f6"
+            checked={toggle}
+            offColor="#fff"
+            onColor="#60a5fa"
+            uncheckedIcon={<HiOutlineSun className="w-full h-full" />}
+            checkedIcon={
+              <HiOutlineMoon className="w-full h-full text-white font-semibold" />
+            }
+          />
         </div>
       )}
     </div>
