@@ -46,7 +46,7 @@ export default function Signup() {
       setLoading(true);
       setError("");
       await signup(email, password, name, url);
-      navigate("/home");
+      navigate("/");
     } catch (err) {
       setError(err.message);
       setLoading(false);
