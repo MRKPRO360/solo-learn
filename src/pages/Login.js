@@ -5,6 +5,9 @@ import { useAuth } from "../context/AuthContext";
 export default function Login() {
   const { login } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || "/";
 
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -20,7 +23,7 @@ export default function Login() {
       setLoading(true);
       setError("");
       await login(email, password);
-      navigate("/");
+      navigate(from, { replace: true });
       // fixed to remove the login history later
     } catch (err) {
       setLoading(false);

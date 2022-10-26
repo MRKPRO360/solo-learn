@@ -10,8 +10,8 @@ export default function Home() {
         </h1>
         <p className="mt-6 text-base font-semibold text-gray-700 sm:text-lg sm:mt-9 lg:mt-12 ">
           Solo learn community provide you their best to accomplish your desire.
-          Our interactive lesson will boost your knowledge power to do something
-          better in our carrieer.
+          Our interactive lesson will boost your programming knowledge to do
+          something better in our carrieer.
         </p>
         <div className="flex gap-6 mt-10 text-base font-semibold sm:text-lg lg:mt-20">
           <Link
@@ -28,7 +28,7 @@ export default function Home() {
 
       <div className="w-full lg:w-1/2">
         <img
-          className="rounded-md h-96 sm:h-[450px] w-full object-cover object-center shadow-md shadow-blue-100"
+          className="rounded-md h-72 sm:h-[450px] w-full object-cover object-center shadow-md shadow-blue-100"
           src={img}
           alt="Solo Learn"
         />

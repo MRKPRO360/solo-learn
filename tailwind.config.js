@@ -6,6 +6,9 @@ module.exports = {
       screens: {
         xs: { max: "425px" },
       },
+      gridTemplateColumns: {
+        autoColumn: "repeat(auto-fit, minmax(250px, 1fr))",
+      },
     },
   },
   plugins: [],
