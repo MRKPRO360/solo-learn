@@ -24,13 +24,15 @@ const router = createBrowserRouter([
       },
       {
         path: "/courses",
-        loader: () => fetch("http://localhost:5000/courses"),
+        loader: () => fetch("https://solo-learn.vercel.app/courses"),
         element: <Courses />,
       },
       {
         path: "/courses/course-details/:id",
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/courses/course-details/${params.id}`),
+          fetch(
+            `https://solo-learn.vercel.app/courses/course-details/${params.id}`
+          ),
         element: <CourseDetails />,
       },
       {
@@ -60,7 +62,7 @@ const router = createBrowserRouter([
       {
         path: "/courses/checkout/:id",
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/courses/checkout/${params.id}`),
+          fetch(`https://solo-learn.vercel.app/courses/checkout/${params.id}`),
         element: (
           <PrivateRoute>
             <CourseCheckout />
@@ -75,3 +77,5 @@ const router = createBrowserRouter([
   },
 ]);
 export default router;
+
+// server link: https://solo-learn.vercel.app
