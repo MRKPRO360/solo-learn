@@ -23,7 +23,7 @@ export default function CourseDetails() {
         to={`/courses/checkout/${id}`}
         className="inline-block p-2 mt-3 font-semibold text-white transition duration-300 bg-blue-500 rounded hover:bg-blue-600 print:hidden"
       >
-        Checkout
+        Get Premium Access
       </Link>
     </div>
   );

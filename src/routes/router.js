@@ -10,6 +10,7 @@ import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Profile from "../pages/Profile";
 import Signup from "../pages/Signup";
+import Update from "../pages/Update";
 import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
@@ -51,6 +52,10 @@ const router = createBrowserRouter([
       {
         path: "/profile",
         element: <Profile />,
+      },
+      {
+        path: "/update-info",
+        element: <Update />,
       },
       {
         path: "/courses/checkout/:id",
