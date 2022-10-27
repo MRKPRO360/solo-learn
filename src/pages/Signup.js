@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import { useAuth } from "../context/AuthContext";
 
@@ -8,7 +8,7 @@ export default function Signup() {
   const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
-
+  const location = useLocation();
   const { signup, googleLogin, githubLogin } = useAuth();
 
   const handleGoogleLogin = async function () {
@@ -107,6 +107,7 @@ export default function Signup() {
             name="photoUrl"
             className="w-full px-4 py-2 leading-tight transition duration-300 border-2 border-gray-200 rounded-md appearance-none bg-gray-50 focus:outline-none focus:bg-white focus:border-blue-500"
             placeholder="www.photoUrl-link.com"
+            required
           />
         </div>
 
