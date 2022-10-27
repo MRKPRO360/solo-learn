@@ -1,6 +1,6 @@
 # Solo Learn App
 
-### Live link:
+### Live link: https://solo-learn-48305.web.app/
 
 ## This project was created with react, react-router-dom, tailwindcss, firebase etc.
 
