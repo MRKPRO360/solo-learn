@@ -6,7 +6,7 @@ export default function Update() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const { currentUser, updateInfo } = useAuth();
+  const { updateInfo } = useAuth();
   const navigate = useNavigate();
 
   const handleUpdate = async function (e) {
