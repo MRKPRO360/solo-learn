@@ -1,9 +1,32 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
 export default function Update() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  const handleUpdate = function () {};
+
+  const { currentUser, updateInfo } = useAuth();
+  const navigate = useNavigate();
+
+  const handleUpdate = async function (e) {
+    e.preventDefault();
+    const form = e.target;
+    const name = form.name.value;
+    const photoURL = form.photoUrl.value;
+    console.log(photoURL);
+
+    try {
+      setLoading(true);
+      setError("");
+      await updateInfo(name, photoURL);
+      navigate(-1);
+    } catch (err) {
+      setLoading(false);
+      setError(err.message);
+      console.log(err);
+    }
+  };
 
   return (
     <div>

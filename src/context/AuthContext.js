@@ -31,8 +31,8 @@ export default function AuthProvider({ children }) {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
-      setLoading(false);
       setCurrentUser(user);
+      setLoading(false);
     });
     // do clean up
     return unsubscribe;
@@ -66,6 +66,18 @@ export default function AuthProvider({ children }) {
     return await signInWithPopup(auth, githubProvider);
   };
 
+  // update profile
+
+  const updateInfo = async function (name, url) {
+    await updateProfile(auth.currentUser, {
+      displayName: name,
+      photoURL: url,
+    });
+
+    const user = auth.currentUser;
+    setCurrentUser({ ...user });
+  };
+
   // logout
   const logout = async function () {
     return await signOut(auth);
@@ -77,6 +89,7 @@ export default function AuthProvider({ children }) {
     login,
     googleLogin,
     githubLogin,
+    updateInfo,
     logout,
   };
   return (
