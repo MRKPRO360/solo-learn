@@ -7,6 +7,7 @@ import {
   GithubAuthProvider,
   GoogleAuthProvider,
   onAuthStateChanged,
+  sendPasswordResetEmail,
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
@@ -78,6 +79,12 @@ export default function AuthProvider({ children }) {
     setCurrentUser({ ...user });
   };
 
+  // password reset email
+
+  const passwordReset = async function (email) {
+    return await sendPasswordResetEmail(auth, email);
+  };
+
   // logout
   const logout = async function () {
     return await signOut(auth);
@@ -90,6 +97,7 @@ export default function AuthProvider({ children }) {
     googleLogin,
     githubLogin,
     updateInfo,
+    passwordReset,
     logout,
   };
   return (
