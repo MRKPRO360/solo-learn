@@ -2,14 +2,14 @@
 
 ### Live link: https://solo-learn-48305.web.app/
 
-## This project was created with react, react-router-dom, tailwindcss, firebase etc.
+- This project was created with react, react-router-dom, tailwindcss, firebase etc.
 
-## User authentication via email and password, github, and google.
+- User authentication via email and password, github, and google.
 
-## User display name and profile page added so that user can logout or modify his/her info.
+- User display name and profile page added so that user can logout or modify his/her info.
 
-## Error dispayed when the authentication problem issued.
+- Error dispayed when the authentication problem issued.
 
-## When user forget their password then they can get password reset option :)
+- When user forget their password then they can get password reset option :)
 
-## Consisten UI throgh responsiveness
+- Consistent UI throgh responsiveness
