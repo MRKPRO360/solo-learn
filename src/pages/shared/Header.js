@@ -3,6 +3,7 @@ import { useAuth } from "../../context/AuthContext";
 import { Link, NavLink } from "react-router-dom";
 import Switch from "react-switch";
 import { HiOutlineMoon, HiOutlineSun } from "react-icons/hi";
+import ReactTooltip from "react-tooltip";
 
 const navItems = [
   {
@@ -21,15 +22,6 @@ const navItems = [
 
 export default function Header() {
   const [toggle, setToggle] = useState(false);
-  const [isHovering, setIsHovering] = useState(false);
-
-  const handleMouseOver = function () {
-    setIsHovering(true);
-  };
-
-  const handleMouseOut = function () {
-    setIsHovering(false);
-  };
 
   const handleSwitch = function () {
     setToggle(!toggle);
@@ -63,23 +55,22 @@ export default function Header() {
         {currentUser?.uid ? (
           <div className="px-2 mt-2 md:px-0 sm:mt-0">
             <Link to="/profile">
-              <div
-                onMouseOver={handleMouseOver}
-                onMouseOut={handleMouseOut}
-                className="relative"
-              >
+              <div>
                 {currentUser?.photoURL ? (
                   <>
                     <img
+                      data-tip
+                      data-for="nameTip"
                       className="w-10 h-10 rounded-full"
                       src={currentUser.photoURL}
                       alt="user"
                     />
-                    {isHovering && (
-                      <span className="absolute font-semibold text-white text-[17px] left-[-16px] -bottom-4">
+
+                    <ReactTooltip id="nameTip" place="bottom" effect="solid">
+                      <span className="text-sm font-semibold text-white ">
                         {currentUser?.displayName}
                       </span>
-                    )}
+                    </ReactTooltip>
                   </>
                 ) : (
                   ""
